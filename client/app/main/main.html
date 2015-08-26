@@ -15,7 +15,7 @@
       <button ng-click="addImage(url)">Add Image</button>
       <ul>
         <li ng-repeat="image in myImages">
-          <img height="100px" width="100px" ng-src="{{image.url}}">
+          <a href="{{image.url}}"><img height="100px" width="100px" ng-src="{{image.url}}"></a>
         </li>
       </ul>
     </div>
