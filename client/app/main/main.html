@@ -11,9 +11,12 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="page-header">Features:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
-        <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}</a></li>
+      <input ng-model="url" type="text">
+      <button ng-click="addImage(url)">Add Image</button>
+      <ul>
+        <li ng-repeat="image in myImages">
+          <img height="100px" width="100px" ng-src="{{image.url}}">
+        </li>
       </ul>
     </div>
   </div>

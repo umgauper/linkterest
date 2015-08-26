@@ -1,22 +1,17 @@
 'use strict';
 
 angular.module('linkterestApp')
-  .controller('MainCtrl', function ($scope, $http) {
-    $scope.awesomeThings = [];
+  .controller('MainCtrl', function ($scope, $http, Auth) {
 
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
-    });
+    $scope.url = '';
 
-    $scope.addThing = function() {
-      if($scope.newThing === '') {
-        return;
-      }
-      $http.post('/api/things', { name: $scope.newThing });
-      $scope.newThing = '';
-    };
+    $scope.addImage = function(url) {
+      console.log(Auth.getCurrentUser()._id);
+      $http.post('/api/images', {owner: Auth.getCurrentUser()._id, url: url}).success(function() {
+        $http.get('/api/images/owner/' + Auth.getCurrentUser()._id).success(function(data) {
+          $scope.myImages = data;
+        });
+      })
+    }
 
-    $scope.deleteThing = function(thing) {
-      $http.delete('/api/things/' + thing._id);
-    };
-  });
+});

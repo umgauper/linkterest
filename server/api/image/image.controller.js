@@ -11,6 +11,14 @@ exports.index = function(req, res) {
   });
 };
 
+//Get all images owned by logged in user
+exports.showByOwner = function(req, res) {
+  Image.find({owner: req.params.owner_id}, function (err, images) {
+    if(err) { return handleError(res, err); }
+    return res.json(200, images);
+  });
+};
+
 // Get a single image
 exports.show = function(req, res) {
   Image.findById(req.params.id, function (err, image) {
