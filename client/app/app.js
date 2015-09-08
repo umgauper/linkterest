@@ -5,7 +5,8 @@ angular.module('linkterestApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'wu.masonry'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
