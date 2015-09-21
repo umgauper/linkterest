@@ -26,4 +26,14 @@ angular.module('linkterestApp')
         });
       })
     };
+
+    $scope.deleteImage = function(id) {
+      $http.delete('/api/images/' + id).success(function(data) {
+        $http.get('/api/images/owner/' + Auth.getCurrentUser()._id).success(function(data) {
+          $scope.bricks = data;
+          console.log(data);
+        });
+      });
+
+    }
 });

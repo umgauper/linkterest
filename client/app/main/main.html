@@ -15,6 +15,9 @@
       <div masonry>
         <div class="masonry-brick" ng-repeat="brick in bricks">
           <img ng-src="{{brick.url}}" alt="A masonry brick">
+          <span ng-click="deleteImage(brick._id)">
+            <i class="fa fa-remove"></i>
+          </span>
         </div>
       </div>
     </div>

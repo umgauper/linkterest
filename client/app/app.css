@@ -50,22 +50,6 @@
   clear: both;
 }
 
-/* ---- grid-item ---- */
-
-.grid-item {
-  width: 100px;
-  height: 100px;
-  float: left;
-  background: #D26;
-  border: 2px solid #333;
-  border-color: hsla(0, 0%, 0%, 0.5);
-  border-radius: 5px;
+.masonry-brick {
+  border: 20px solid darkseagreen;
 }
-
-.grid-item--width2 { width: 200px; }
-.grid-item--width3 { width: 300px; }
-.grid-item--width4 { width: 400px; }
-
-.grid-item--height2 { height: 200px; }
-.grid-item--height3 { height: 300px; }
-.grid-item--height4 { height: 400px; }
