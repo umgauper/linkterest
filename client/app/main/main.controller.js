@@ -5,16 +5,8 @@ angular.module('linkterestApp')
 
     $http.get('/api/images/owner/' + Auth.getCurrentUser()._id).success(function(data) {
       $scope.bricks = data;
-
-      //console.log(data);
     });
 
-    //$scope.bricks = [{src: 'http://lorempixel.com/g/280/275/?3729'},
-    //                 {src: 'http://lorempixel.com/g/280/320/?6389'},
-    //                 {src: 'http://lorempixel.com/g/280/320/?6359'},
-    //                 {src: 'http://lorempixel.com/g/280/320/?6349'}
-    //];
-    //TODO: Investigate 'Error: An invalid or illegal string was specified' angular-masonry js.
     $scope.url = '';
 
     $scope.addImage = function(url) {
@@ -31,7 +23,6 @@ angular.module('linkterestApp')
       $http.delete('/api/images/' + id).success(function(data) {
         $http.get('/api/images/owner/' + Auth.getCurrentUser()._id).success(function(data) {
           $scope.bricks = data;
-          console.log(data);
         });
       });
 

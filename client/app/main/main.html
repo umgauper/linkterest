@@ -11,7 +11,7 @@
       <input ng-model="url" type="text">
       <button ng-click="addImage(url)">Add Image</button>
     </div>
-    <div class="col-lg-10 col-lg-offset-1">
+    <div class="col-lg-12">
       <div masonry>
         <div class="masonry-brick" ng-repeat="brick in bricks">
           <img ng-src="{{brick.url}}" alt="A masonry brick">
