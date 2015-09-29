@@ -3,9 +3,21 @@
 angular.module('linkterestApp')
   .controller('MainCtrl', function ($scope, $http, Auth, $modal) {
 
-    $http.get('/api/images/owner/' + Auth.getCurrentUser()._id).success(function(data) { //TODO: delay Get request until Auth.getCurrentUser() is defined!!
-      $scope.bricks = data;
-    });
+
+
+    $scope.$watch(
+      function() {
+        return Auth.getCurrentUser()._id;
+      },
+      function() {
+
+        if (Auth.getCurrentUser()._id) {
+          $http.get('/api/images/owner/' + Auth.getCurrentUser()._id).success(function (data) { //TODO: delay Get request until Auth.getCurrentUser() is defined!!
+            $scope.bricks = data;
+          });
+        }
+      }
+    );
 
     $scope.url = '';
 
