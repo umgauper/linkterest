@@ -15,11 +15,11 @@
     <div class="col-lg-12">
       <div masonry>
         <div class="masonry-brick" ng-repeat="brick in bricks">
-          <img ng-src="{{brick.url}}" alt="A masonry brick">
-          <span ng-click="deleteImage(brick._id)">
+            <span id="remove" ng-click="deleteImage(brick._id)">
             <i class="fa fa-remove"></i>
-          </span>
-          <p>{{brick.caption}}</p>
+            </span>
+            <img ng-src="{{brick.url}}" alt="A masonry brick">
+            <h3 class="caption">{{brick.caption}}</h3>
         </div>
       </div>
     </div>
