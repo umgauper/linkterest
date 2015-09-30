@@ -28,6 +28,17 @@
 }
 
 /**
+ *Google Fonts
+ */
+
+@font-face {
+  font-family: 'Pacifico';
+  src: url('../components/fonts/pacifico/Pacifico.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/**
  * App-wide Styles
  */
 
@@ -51,4 +62,19 @@
 }
 
 .masonry-brick {
+}
+
+#logo {
+  width: 500px;
+  font-family: 'Pacifico', serif;
+  font-size: 4em;
+  text-shadow: 1px 1px black;
+  text-outline: 1px red;
+  transform: scale(1.5, 1.5);
+}
+
+#banner {
+  background: url('http://openphoto.net/volumes/brucedenney/20060406/openphotonet_Picture3.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
