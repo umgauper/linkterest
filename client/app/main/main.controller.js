@@ -3,8 +3,6 @@
 angular.module('linkterestApp')
   .controller('MainCtrl', function ($scope, $http, Auth, $modal) {
 
-
-
     $scope.$watch(
       function() {
         return Auth.getCurrentUser()._id;
@@ -12,7 +10,7 @@ angular.module('linkterestApp')
       function() {
 
         if (Auth.getCurrentUser()._id) {
-          $http.get('/api/images/owner/' + Auth.getCurrentUser()._id).success(function (data) { //TODO: delay Get request until Auth.getCurrentUser() is defined!!
+          $http.get('/api/images/owner/' + Auth.getCurrentUser()._id).success(function (data) {
             $scope.bricks = data;
           });
         }
@@ -49,5 +47,10 @@ angular.module('linkterestApp')
       $http.delete('/api/images/' + id).success(function(data) {
           $scope.bricks = $scope.bricks.filter(function(el) { return el._id !== id});
       });
-    }
+    };
+
+    $scope.isLoggedIn = function() {
+      return Auth.isLoggedIn();
+    };
+
 });
