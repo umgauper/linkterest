@@ -1,14 +1,18 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <ul>
-        <li ng-repeat="user in allUsers" ng-click="loadImages(user._id)" ng-hide="currentUser === user._id">{{user.name}}</li>
+    <div class="col-lg-2">
+      <ul class="list-group">
+        <li ng-class="{highlight: active===user.name}" class="list-group-item user" ng-repeat="user in allUsers" ng-click="loadImages(user._id); setActive(user.name)" ng-hide="currentUser === user._id">{{user.name | uppercase}}</li>
       </ul>
+    </div>
+    <div class="col-lg-10">
+      <h2 class="board" ng-show="active">{{active}}'s board</h2>
       <div masonry>
-        <div class="masonry-brick" ng-repeat="brick in bricks">
+         <div class="masonry-brick" ng-repeat="brick in bricks">
           <img ng-src="{{brick.url}}" alt="A masonry brick">
-          <p>{{brick.caption}}</p>
+          <h3 class="caption">{{brick.caption}}</h3>
+         </div>
         </div>
       </div>
     </div>
