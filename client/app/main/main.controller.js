@@ -3,7 +3,7 @@
 angular.module('linkterestApp')
   .controller('MainCtrl', function ($scope, $http, Auth, $modal) {
 
-    $scope.$watch(
+    $scope.$watch( /* Don't get images until owner is defined */
       function() {
         return Auth.getCurrentUser()._id;
       },
@@ -52,5 +52,6 @@ angular.module('linkterestApp')
     $scope.isLoggedIn = function() {
       return Auth.isLoggedIn();
     };
+
 
 });
