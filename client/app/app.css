@@ -83,7 +83,6 @@ img {
 }
 
 .caption {
-  /*width: 300px;*/
   margin-left: 20px;
   text-align: center;
 }
@@ -133,8 +132,6 @@ img {
   padding: 10px 0;
   box-shadow: 3px 3px 0 0 lightgray;
 }
-
-
 
 .highlight {
   background-color: rgb(113, 174, 19);
