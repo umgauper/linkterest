@@ -123,17 +123,20 @@ img {
 }
 
 .board {
-  font-family: 'Pacifico';
+  font-family: 'Pacifico', Helvetica, sans-serif;
   text-align: center;
   color: rgb(24, 85, 2);
   padding: 10px 0;
   text-shadow: 3px 3px 0 0 lightgray;
-  transform: scale(1.5, 1.5);
 }
 
 .highlight {
   background-color: rgb(113, 174, 19);
   color: white;
+}
+
+.caption-input, .url-input {
+  width: 100%;
 }
 
 
