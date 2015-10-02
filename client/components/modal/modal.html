@@ -3,17 +3,15 @@
   <h4 ng-if="modal.title" ng-bind="modal.title" class="modal-title"></h4>
 </div>
 <div class="modal-body">
-  <p ng-if="modal.text" ng-bind="modal.text"></p>
-  <div ng-if="modal.html" ng-bind-html="modal.html"></div>
+  <h4>Title</h4>
+  <form novalidate>
+    <input class="caption-input" ng-model="caption" type="text">
+    <h4>Image url</h4>
+    <input class="url-input" ng-model="url" type="text">
+    <img ng-src="{{url}}">
+    <div class="modal-footer">
+      <button ng-disabled="!url || !caption" ng-repeat="button in modal.buttons" ng-class="button.classes" ng-click="button.click($event, url, caption)" ng-bind="button.text" class="btn"></button>
+    </div>
+  </form>
+</div>
 
-  <!-- TODO: move this vv into its own template so modal is reusable!!-->
-  <p>Title</p>
-  <input class="caption-input" ng-model="caption" type="text">
-  <!--Add bootstrap columns to format the modal to look nice-->
-  <p>Image url</p>
-  <input class="url-input" ng-model="url" type="text">
-  <img ng-src="{{url}}">
-</div>
-<div class="modal-footer">
-  <button ng-repeat="button in modal.buttons" ng-class="button.classes" ng-click="button.click($event, url, caption)" ng-bind="button.text" class="btn"></button>
-</div>
