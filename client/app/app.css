@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
 
 /**
  * Bootstrap Fonts
@@ -26,20 +27,6 @@
     font-weight: normal;
     font-style: normal;
 }
-
-/**
- *Google Fonts
- */
-
-@font-face {
-  font-family: 'Pacifico';
-  src: url('../components/fonts/pacifico/Pacifico.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@import url(https://fonts.googleapis.com/css?family=Pacifico);
-
 
 /**
  * App-wide Styles
@@ -100,7 +87,8 @@ img {
 
 #logo {
   width: 500px;
-  font-family: 'Pacifico', Helvetica, sans-serif;
+  font-family: 'Pacifico', Georgia, sans-serif;
+  font-style: italic;
   font-size: 4em;
   text-shadow: 1px 1px black;
   text-outline: 1px red;
