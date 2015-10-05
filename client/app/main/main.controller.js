@@ -52,6 +52,4 @@ angular.module('linkterestApp')
     $scope.isLoggedIn = function() {
       return Auth.isLoggedIn();
     };
-
-
 });
