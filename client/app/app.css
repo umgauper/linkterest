@@ -96,9 +96,10 @@ img {
 }
 
 #banner {
-  background: url('http://openphoto.net/volumes/brucedenney/20060406/openphotonet_Picture3.jpg');
+  background-color: rgb(71, 164, 71);
   background-repeat: no-repeat;
   background-size: cover;
+  color: rgb(255, 255, 255);
 }
 
 .openModal {
